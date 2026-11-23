@@ -1,6 +1,3 @@
-\---
-
-title: "TEST"
-
-\---
-
+---
+title: "Articles"
+---

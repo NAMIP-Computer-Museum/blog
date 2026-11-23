@@ -1,7 +1,11 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://namip-computer-museum.github.io/blog/'
+defaultContentLanguage = 'fr'
 locale = 'fr-be'
 title = 'NAM-IP Blog'
 theme = 'ananke'
+
+[languages.fr]
+  locale = 'fr-be'
 
 [caches]
   [caches.images]
