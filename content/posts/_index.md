@@ -1,3 +1,3 @@
 ---
-title: "Articles"
+title: "Tous les articles"
 ---

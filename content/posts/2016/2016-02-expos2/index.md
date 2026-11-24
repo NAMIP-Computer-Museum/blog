@@ -1,0 +1,23 @@
++++
+title = "Participation au 4e Salon Business To Museum & Tourisme 2016"
+date = 2016-06-30
+numero = "2016/2"
+ordre = 3
+themes = ["Exposition"]
+auteurs = ["Clara Erpicum"]
+series = []
+source = "http://pionnier.nam-ip.be/NAM-ip-Info201602-Expos2.html"
++++
+
+Ce salon, organisé par l’a.s.b.l. Musées et Société en Wallonie, est un lieu d'échanges entre professionnels de musée et du tourisme et des fournisseurs. Le salon propose également un forum et des ateliers. Étant en plein dans la création du Computer Museum, mon temps au salon était limité, j'ai donc participé à quelques “forums” organisés le mercredi après-midi et la journée du jeudi.
+
+Le premier forum a tenté d'évoquer le futur en parlant des robots. Ceux-ci étant déjà présents, même parfois déjà dépassés, je ne sais pas si l'on pouvait parler de “futur”. Un super projet de robot, le MILO, a été présenté par [iRobotique](http://www.irobotique.be). Il s'agit d'un robot qui aidera à la visite du musée de Mariemont. Cependant, Céline Schall (chercheuse à l'Université du Luxembourg) nous a fait un peu déchanter en nous expliquant son retour d'analyse sur un projet de robot au MUDAM: les visiteurs ne sont pas vraiment friant de cette aide mécanique.
+
+Le jeudi matin était consacré aux sous… ceux-là même que tous les musées cherchent partout. Une des nouvelles modes est le financement participatif. Les différents retours sur expériences et les analyses démontrent qu'un financement participatif ne fait pas gagner de l'argent, mais fonde une communauté autour d'un événement. Les revenus compensent à peine l'effort et l’investissement placés dans la campagne et les cadeaux offerts aux donateurs. Pour les musées, il s'agit plus de prévente que de dons. Les retours sont donc mitigés… Le Computer NAM-IP doit-il se lancer là-dedans?
+
+Le BtoM&T, c'est aussi le lieu où l'on va voir chez les autres comment ils ont réalisé l'un ou l'autre projet. Comme celui de KASSIS au Musée du Malgré-Tout: différents contenus sont mis en avant via l’application d'IdÛ, l’information peut être amenée de façons différentes pour chaque pièce. Il y a des quiz, des vidéos, des textes… Un autre projet, le plus spectaculaire, est l'immersion sur la Lune (ou sur Mars) à Euro Space Center. De quoi me donner des envies de visites tout ça!
+
+À la suite de ces deux journées bien remplies, je suis retournée au musée avec un grand nombre d'idées en tête! Je vous donne rendez-vous dès le mois de novembre au Computer Museum pour les voir!
+
+C. Erpicum
+{.signature}

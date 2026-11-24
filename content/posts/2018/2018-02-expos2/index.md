@@ -1,0 +1,27 @@
++++
+title = "Le Computer Museum au Carrefour du Tourisme Namur-Luxembourg"
+date = 2018-06-30
+numero = "2018/2"
+ordre = 4
+themes = ["Exposition"]
+auteurs = ["Aurélien Huysentruyt"]
+series = []
+source = "http://pionnier.nam-ip.be/NAM-ip-INFO201802-Expos2.html"
++++
+
+{{< galerie >}}
+nam-ip-info201802expos2ar.jpg | Carrefour du Tourisme - ©NAM-IP
+{{< /galerie >}}
+
+Le musée s’est rendu au Carrefour du Tourisme le 20 mars dernier (2018) à Durbuy Aventure afin de faire la promotion de son activité.
+
+Cet événement annuel est un salon du tourisme à l’attention des professionnels du secteur touristique: hôtelier, tour operator, propriétaire de gîte, office du tourisme,…
+
+S’y retrouvaient également une cinquantaine d’attraction des provinces de Namur et du Luxembourg.
+
+Outre la distribution d’informations au public (flyers, affiches, activités pédagogiques…), un échange de flyers a été systématiquement réalisé avec les autres attractions présentes afin d’augmenter notre visibilité.
+
+Enfin, petite surprise, nous avons reçu à notre stand la visite du ministre du Tourisme, René Collin, qui s’est montré fort intéressé par notre projet. Il est reparti avec de la documentation et la promesse de venir prochainement visiter notre musée. A suivre.
+
+Aurélien Huysentruyt
+{.signature}
