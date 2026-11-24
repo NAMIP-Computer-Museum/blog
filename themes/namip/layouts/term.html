@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ $isSeries := eq .Data.Plural "series" }}
+<p class="crumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+<p class="muted">{{ len .Pages }} article{{ if gt (len .Pages) 1 }}s{{ end }}</p>
+{{ if $isSeries }}
+  <ol class="cards serie-list">{{ range .Pages.ByDate }}{{ partial "card.html" . }}{{ end }}</ol>
+{{ else }}
+  {{ range .Pages.GroupByDate "2006" }}
+    <section class="year">
+      <h2 class="year-title">{{ .Key }}</h2>
+      <ul class="cards">{{ range .Pages }}{{ partial "card.html" . }}{{ end }}</ul>
+    </section>
+  {{ end }}
+{{ end }}
+{{ end }}

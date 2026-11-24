@@ -1,0 +1,9 @@
+{{/* Compact article entry for lists. Context: a page. */}}
+<li class="card"
+    data-themes="{{ range .GetTerms "themes" }}{{ .Title | urlize }} {{ end }}"
+    data-auteurs="{{ range .GetTerms "auteurs" }}{{ .Title | urlize }} {{ end }}"
+    data-annee="{{ .Date.Year }}"
+    data-titre="{{ .Title | lower }}">
+  <a class="card-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+  {{ partial "meta.html" . }}
+</li>

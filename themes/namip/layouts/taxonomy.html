@@ -1,0 +1,15 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ $isSeries := eq .Data.Plural "series" }}
+<ul class="terms">
+  {{ $terms := cond (eq .Data.Plural "themes") .Data.Terms.ByCount .Data.Terms.Alphabetical }}
+  {{ range $terms }}
+    <li>
+      <a class="term {{ if eq $.Data.Plural "themes" }}badge badge-{{ .Page.Title | urlize }}{{ end }}" href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
+      <span class="count">{{ .Count }} {{ if $isSeries }}parties{{ else }}article{{ if gt .Count 1 }}s{{ end }}{{ end }}</span>
+      {{ if $isSeries }}{{ with index .Pages.ByDate 0 }}<small class="muted">— à partir de {{ .Params.numero }}</small>{{ end }}{{ end }}
+    </li>
+  {{ end }}
+</ul>
+{{ end }}

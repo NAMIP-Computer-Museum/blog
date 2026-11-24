@@ -1,0 +1,235 @@
+/* NAM-IP Computer Museum — charte rouge / jaune */
+:root {
+  --rouge: #B42E32;   /* rouge du logo NAM-IP */
+  --rouge-fonce: #8F2428;
+  --rouge-vif: #D32E33;
+  --rouge-pale: #FBEAEA;
+  --jaune: #FFCC00;   /* jaune du logo NAM-IP */
+  --jaune-pale: #FFF6CC;
+  --gris: #E4E4E4;
+  --gris-fonce: #505050;
+  --texte: #1d1d1d;
+  --fond: #ffffff;
+  --fond-alt: #f6f6f4;
+  --muted: #6b6b6b;
+  --lien: #A32A2E;
+  --largeur: 60rem;
+  --rayon: 6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Trebuchet MS", "Lucida Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--texte);
+  background: var(--fond);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main { flex: 1; padding-top: 2rem; padding-bottom: 3rem; }
+
+.wrap { max-width: var(--largeur); margin: 0 auto; padding: 0 1rem; }
+
+a { color: var(--lien); text-underline-offset: 2px; }
+a:hover { color: var(--rouge); }
+
+h1, h2, h3 { line-height: 1.25; font-weight: 600; }
+h1 { font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.1rem); margin: .3rem 0 1rem; }
+h2 { font-size: 1.35rem; }
+h3 { font-size: 1.1rem; }
+
+.muted { color: var(--muted); }
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--rouge);
+  color: #fff;
+  border-bottom: 6px solid var(--jaune);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .75rem 1.5rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+}
+.brand { display: flex; align-items: center; gap: .8rem; color: #fff; text-decoration: none; }
+.brand:hover { color: #fff; }
+.brand img { height: 60px; width: auto; display: block; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+.brand-title { font-weight: 700; font-size: 1.3rem; letter-spacing: .01em; }
+.brand-sub { font-size: .85rem; opacity: .9; }
+.main-nav { display: flex; flex-wrap: wrap; gap: .25rem; }
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: .35rem .7rem;
+  border-radius: var(--rayon);
+  font-weight: 500;
+}
+.main-nav a:hover, .main-nav a[aria-current] { background: var(--jaune); color: var(--texte); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: #2b2b2b;
+  color: #ddd;
+  border-top: 6px solid var(--jaune);
+  font-size: .9rem;
+}
+.site-footer a { color: var(--jaune); }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding-top: 1.5rem; padding-bottom: 1.5rem; }
+
+/* ---------- Badges / meta ---------- */
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .6rem; font-size: .85rem; color: var(--muted); }
+.numero { font-weight: 600; color: var(--gris-fonce); }
+.auteurs a { color: var(--gris-fonce); }
+
+.badge {
+  display: inline-block;
+  padding: .1rem .6rem;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: var(--gris);
+  color: var(--texte);
+  border: 1px solid transparent;
+}
+.badge:hover { filter: brightness(.95); color: var(--texte); }
+.badge .count { font-weight: 400; opacity: .75; margin-left: .2rem; }
+.badge-editorial      { background: var(--rouge); color: #fff; }
+.badge-editorial:hover { color: #fff; }
+.badge-preservation   { background: var(--jaune); }
+.badge-exposition     { background: #F4D9D9; }
+.badge-recherche      { background: #FFE98A; }
+.badge-acquisition    { background: #fff; border-color: var(--rouge); color: var(--rouge-fonce); }
+.badge-comptes-rendus { background: #EDE6D6; }
+.badge-nouvelles      { background: #fff; border-color: var(--jaune); }
+.badge-communique     { background: var(--gris); }
+
+/* ---------- Lists ---------- */
+.cards { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; gap: .6rem; }
+ol.cards { list-style: decimal; padding-left: 1.5rem; }
+.card {
+  padding: .7rem .9rem;
+  border-left: 4px solid var(--jaune);
+  background: var(--fond-alt);
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+}
+.card:hover { border-left-color: var(--rouge); }
+.card-title { display: block; font-weight: 600; color: var(--texte); text-decoration: none; margin-bottom: .2rem; }
+.card-title:hover { color: var(--rouge); text-decoration: underline; }
+
+.year-title { border-bottom: 3px solid var(--rouge); padding-bottom: .3rem; margin-top: 2.2rem; }
+.issue-title { color: var(--rouge-fonce); margin: 1.4rem 0 .6rem; }
+.issue-title::before { content: ""; display: inline-block; width: .7rem; height: .7rem; background: var(--jaune); margin-right: .5rem; border-radius: 2px; }
+
+.intro { font-size: 1.05rem; max-width: 42rem; }
+.themes-bar .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.themes-bar .badge { font-size: .9rem; padding: .3rem .9rem; }
+
+.button {
+  display: inline-block;
+  background: var(--rouge);
+  color: #fff;
+  padding: .6rem 1.1rem;
+  border-radius: var(--rayon);
+  text-decoration: none;
+  font-weight: 600;
+}
+.button:hover { background: var(--rouge-fonce); color: #fff; }
+.more { margin-top: 2rem; }
+
+.terms { list-style: none; padding: 0; display: grid; gap: .5rem; }
+.terms .count { color: var(--muted); font-size: .9rem; margin-left: .4rem; }
+.crumb { margin: 0; font-size: .9rem; }
+
+/* ---------- Filters ---------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1rem;
+  align-items: flex-end;
+  background: var(--jaune-pale);
+  border: 1px solid #f0dc80;
+  border-radius: var(--rayon);
+  padding: 1rem;
+  margin: 1rem 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.filters label { display: flex; flex-direction: column; font-size: .8rem; font-weight: 600; gap: .2rem; min-width: 9rem; }
+.filters .grow { flex: 1; min-width: 12rem; }
+.filters select, .filters input {
+  font: inherit;
+  font-weight: 400;
+  font-size: .95rem;
+  padding: .4rem .5rem;
+  border: 1px solid #c9c9c9;
+  border-radius: 4px;
+  background: #fff;
+  max-width: 100%;
+}
+.filters select:focus, .filters input:focus { outline: 2px solid var(--rouge); outline-offset: 1px; }
+.filter-count { margin: 0 0 .4rem; font-size: .9rem; }
+.empty { font-style: italic; color: var(--muted); }
+[hidden] { display: none !important; }
+
+/* ---------- Article ---------- */
+.article { max-width: 44rem; margin: 0 auto; }
+.article-header { border-bottom: 3px solid var(--jaune); margin-bottom: 1.5rem; }
+.content p { text-align: left; hyphens: auto; }
+.content img { max-width: 100%; height: auto; border-radius: 4px; }
+.content figure { margin: 1.5rem 0; text-align: center; }
+.content figcaption { font-size: .85rem; color: var(--muted); }
+.content blockquote { border-left: 4px solid var(--jaune); margin: 1rem 0; padding: .2rem 1rem; background: var(--fond-alt); }
+.content table { border-collapse: collapse; max-width: 100%; display: block; overflow-x: auto; }
+.content td, .content th { border: 1px solid var(--gris); padding: .3rem .5rem; }
+.content .galerie { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .6rem; margin: 1.5rem 0; }
+.content .galerie figure { margin: 0; }
+.content .galerie a { display: block; }
+.content .galerie img { width: 100%; height: 160px; object-fit: cover; }
+.content .galerie img:hover { outline: 3px solid var(--jaune); }
+.content .galerie figcaption { font-size: .78rem; line-height: 1.35; margin-top: .25rem; text-align: left; }
+.content .signature { text-align: right; font-style: italic; color: var(--gris-fonce); }
+
+.serie {
+  background: var(--jaune-pale);
+  border-left: 5px solid var(--jaune);
+  padding: .8rem 1.1rem;
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+  margin: 0 0 1.5rem;
+  font-size: .92rem;
+}
+.serie h2 { font-size: 1rem; margin: 0 0 .4rem; }
+.serie ol { margin: 0 0 .5rem; padding-left: 1.3rem; }
+.serie-nav { display: flex; justify-content: space-between; gap: 1rem; font-weight: 600; }
+.serie-nav .next { margin-left: auto; }
+
+.article-footer { margin-top: 2.5rem; border-top: 1px solid var(--gris); padding-top: 1rem; font-size: .92rem; }
+.source { color: var(--muted); }
+.same-issue h2 { font-size: 1.05rem; }
+.same-issue ul { padding-left: 1.2rem; }
+
+@media (max-width: 600px) {
+  .brand img { height: 46px; }
+  .brand-title { font-size: 1.1rem; }
+  .main-nav { width: 100%; }
+  .filters { position: static; }
+  .filters label { min-width: calc(50% - .5rem); }
+}
+
+/* Long URLs / references must never widen the page on mobile. */
+.content { overflow-wrap: anywhere; }
+.content pre { white-space: pre-wrap; background: var(--fond-alt); padding: .6rem .8rem; border-radius: 4px; font-size: .9rem; }
+.article-header { padding-top: .5rem; }

@@ -1,0 +1,12 @@
+{{/* Badges: numéro, rubrique(s), auteur(s). Context: a page. */}}
+<div class="meta">
+  {{ with .Params.numero }}<span class="numero">NAM-IP/Infos {{ . }}</span>{{ end }}
+  {{ range .GetTerms "themes" }}
+    <a class="badge badge-{{ .Title | urlize }}" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  {{ end }}
+  {{ with .GetTerms "auteurs" }}
+    <span class="auteurs">par
+    {{ range $i, $a := . }}{{ if $i }}, {{ end }}<a href="{{ $a.RelPermalink }}">{{ $a.LinkTitle }}</a>{{ end }}
+    </span>
+  {{ end }}
+</div>

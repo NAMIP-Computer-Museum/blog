@@ -1,0 +1,18 @@
+{{/* Image grid with captions. Inner content: one image per line, "file.jpg | légende". */}}
+<div class="galerie">
+  {{ range split (trim .Inner "\n") "\n" }}
+    {{ $parts := split . "|" }}
+    {{ $file := trim (index $parts 0) " " }}
+    {{ $cap := cond (gt (len $parts) 1) (trim (delimit (after 1 $parts) "|") " ") "" }}
+    {{ with $file }}
+      {{ with $.Page.Resources.Get . }}
+        <figure>
+          <a href="{{ .RelPermalink }}"><img src="{{ .RelPermalink }}" alt="{{ $cap }}" loading="lazy"{{ with .Width }} width="{{ . }}"{{ end }}{{ with .Height }} height="{{ . }}"{{ end }}></a>
+          {{ with $cap }}<figcaption>{{ . }}</figcaption>{{ end }}
+        </figure>
+      {{ else }}
+        {{ warnf "galerie: image %q introuvable dans %s" $file $.Page.File.Path }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>

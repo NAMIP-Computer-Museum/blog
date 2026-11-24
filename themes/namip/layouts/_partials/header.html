@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ "" | relURL }}">
+      <img src="{{ "images/logo-namip.jpg" | relURL }}" alt="Computer Museum NAM-IP" width="100" height="60">
+      <span class="brand-text">
+        <span class="brand-title">{{ site.Title }}</span>
+        <span class="brand-sub">{{ site.Params.subtitle }}</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      {{ $current := . }}
+      {{ range site.Menus.main }}
+        <a href="{{ .URL | relURL }}"{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>

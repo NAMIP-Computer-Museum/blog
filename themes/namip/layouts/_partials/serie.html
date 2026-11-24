@@ -1,0 +1,23 @@
+{{/* Series box: lists all parts of each series the page belongs to. */}}
+{{ $page := . }}
+{{ range .GetTerms "series" }}
+  {{ $parts := .Pages.ByDate }}
+  <aside class="serie">
+    <h2>Série : <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> <small>({{ len $parts }} parties)</small></h2>
+    <ol>
+      {{ range $parts }}
+        <li>{{ if eq .RelPermalink $page.RelPermalink }}<strong>{{ .Title }}</strong> <small>(cet article)</small>{{ else }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }} <small class="muted">— {{ .Params.numero }}</small></li>
+      {{ end }}
+    </ol>
+    {{ $prev := "" }}{{ $next := "" }}{{ $found := false }}
+    {{ range $parts }}
+      {{ if eq .RelPermalink $page.RelPermalink }}{{ $found = true }}
+      {{ else if not $found }}{{ $prev = . }}
+      {{ else if not $next }}{{ $next = . }}{{ end }}
+    {{ end }}
+    <div class="serie-nav">
+      {{ with $prev }}<a href="{{ .RelPermalink }}">← Partie précédente</a>{{ end }}
+      {{ with $next }}<a class="next" href="{{ .RelPermalink }}">Partie suivante →</a>{{ end }}
+    </div>
+  </aside>
+{{ end }}

@@ -1,15 +1,49 @@
 baseURL = 'https://namip-computer-museum.github.io/blog/'
 defaultContentLanguage = 'fr'
-locale = 'fr-be'
-title = 'NAM-IP Blog'
-theme = 'ananke'
+title = 'NAM-IP/Infos'
+theme = 'namip'
+removePathAccents = true
+titleCaseStyle = 'firstupper'
 
 [languages.fr]
   locale = 'fr-be'
 
+[params]
+  subtitle = 'Lettre du Computer Museum NAM-IP'
+  description = "Archives de NAM-IP/Infos, la lettre d'information du Computer Museum NAM-IP (Namur), 2015–2020."
+
+[taxonomies]
+  theme = 'themes'
+  auteur = 'auteurs'
+  serie = 'series'
+
+[pagination]
+  pagerSize = 1000
+
+[[menus.main]]
+  name = 'Accueil'
+  pageRef = '/'
+  weight = 1
+[[menus.main]]
+  name = 'Archives'
+  pageRef = '/archives'
+  weight = 2
+[[menus.main]]
+  name = 'Rubriques'
+  pageRef = '/themes'
+  weight = 3
+[[menus.main]]
+  name = 'Auteurs'
+  pageRef = '/auteurs'
+  weight = 4
+[[menus.main]]
+  name = 'Séries'
+  pageRef = '/series'
+  weight = 5
+
+[markup.goldmark.parser.attribute]
+  block = true
+
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
-
-[params]
-custom_css = ["css/custom.css"]

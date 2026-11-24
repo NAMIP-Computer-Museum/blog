@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{ $posts := where site.RegularPages "Section" "posts" }}
+<section class="intro">
+  {{ .Content }}
+</section>
+
+<section class="themes-bar">
+  <h2>Rubriques</h2>
+  <div class="chips">
+    {{ range site.Taxonomies.themes.ByCount }}
+      <a class="badge badge-{{ .Page.Title | urlize }}" href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }} <span class="count">{{ .Count }}</span></a>
+    {{ end }}
+  </div>
+</section>
+
+{{ $byIssue := $posts.GroupByParam "numero" "desc" }}
+{{ range first 3 $byIssue }}
+  <section class="issue">
+    <h2 class="issue-title">NAM-IP/Infos {{ .Key }}</h2>
+    <ul class="cards">
+      {{ range sort .Pages "Params.ordre" }}{{ partial "card.html" . }}{{ end }}
+    </ul>
+  </section>
+{{ end }}
+
+<p class="more"><a class="button" href="{{ "archives/" | relURL }}">Tous les numéros et filtres →</a></p>
+{{ end }}

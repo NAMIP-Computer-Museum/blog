@@ -1,0 +1,50 @@
+{{ define "main" }}
+{{ $posts := where site.RegularPages "Section" "posts" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+
+<form class="filters" id="filtres" role="search" onsubmit="return false">
+  <label>Rubrique
+    <select name="theme">
+      <option value="">Toutes</option>
+      {{ range site.Taxonomies.themes.ByCount }}<option value="{{ .Page.Title | urlize }}">{{ .Page.LinkTitle }} ({{ .Count }})</option>{{ end }}
+    </select>
+  </label>
+  <label>Auteur
+    <select name="auteur">
+      <option value="">Tous</option>
+      {{ range site.Taxonomies.auteurs.Alphabetical }}<option value="{{ .Page.Title | urlize }}">{{ .Page.LinkTitle }} ({{ .Count }})</option>{{ end }}
+    </select>
+  </label>
+  <label>Année
+    <select name="annee">
+      <option value="">Toutes</option>
+      {{ range $posts.GroupByDate "2006" }}<option>{{ .Key }}</option>{{ end }}
+    </select>
+  </label>
+  <label class="grow">Titre
+    <input type="search" name="q" placeholder="Rechercher dans les titres…">
+  </label>
+  <p class="filter-count" aria-live="polite"><span id="nb">{{ len $posts }}</span> articles</p>
+</form>
+
+<div id="archive">
+{{ range $posts.GroupByDate "2006" }}
+  <section class="year" data-year="{{ .Key }}">
+    <h2 class="year-title">{{ .Key }}</h2>
+    {{ range .Pages.GroupByParam "numero" "desc" }}
+      <section class="issue">
+        <h3 class="issue-title">NAM-IP/Infos {{ .Key }}</h3>
+        <ul class="cards">
+          {{ range sort .Pages "Params.ordre" }}{{ partial "card.html" . }}{{ end }}
+        </ul>
+      </section>
+    {{ end }}
+  </section>
+{{ end }}
+</div>
+<p id="aucun" class="empty" hidden>Aucun article ne correspond à ces filtres.</p>
+
+{{ $js := resources.Get "js/filtres.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

@@ -1,0 +1,38 @@
+{{ define "main" }}
+<article class="article">
+  <header class="article-header">
+    {{ partial "meta.html" . }}
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  {{ partial "serie.html" . }}
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+
+  <footer class="article-footer">
+    {{ with .Params.source }}
+      <p class="source">Article paru dans <em>NAM-IP/Infos {{ $.Params.numero }}</em> —
+        <a href="{{ . }}" rel="nofollow">page d'origine</a></p>
+    {{ end }}
+
+    {{/* Other articles of the same issue */}}
+    {{ with .Params.numero }}
+      {{ $num := . }}
+      {{ $same := where (where site.RegularPages "Section" "posts") "Params.numero" $num }}
+      {{ if gt (len $same) 1 }}
+        <section class="same-issue">
+          <h2>Dans le même numéro ({{ $num }})</h2>
+          <ul>
+            {{ range sort $same "Params.ordre" }}
+              <li>{{ if eq .RelPermalink $.RelPermalink }}<strong>{{ .Title }}</strong>{{ else }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+                {{ range first 1 (.GetTerms "themes") }}<small class="muted">· {{ .LinkTitle }}</small>{{ end }}</li>
+            {{ end }}
+          </ul>
+        </section>
+      {{ end }}
+    {{ end }}
+  </footer>
+</article>
+{{ end }}
