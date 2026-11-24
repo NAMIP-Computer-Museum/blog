@@ -35,4 +35,6 @@
     {{ end }}
   </footer>
 </article>
+{{ $js := resources.Get "js/visionneuse.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
 {{ end }}
