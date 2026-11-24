@@ -1,0 +1,4 @@
+# Corrections des séries détectées automatiquement.
+# slug: "Nom de la série"  -> force l'appartenance à cette série
+# slug: null               -> retire l'article de toute série
+{}

@@ -1,0 +1,17 @@
+# Normalisation des auteurs.
+# noms: variante -> forme canonique (prioritaire sur la détection automatique
+#       initiales -> nom complet, faite à partir des signatures)
+# articles: slug -> liste d'auteurs (remplace tout pour cet article)
+noms:
+  "M. Gevers": "Marie d'Udekem-Gevers"
+  "Marie Gevers": "Marie d'Udekem-Gevers"
+  "M.d'Udekem-Gevers": "Marie d'Udekem-Gevers"
+  "M. d'Udekem-Gevers": "Marie d'Udekem-Gevers"
+  "F. Bodart": "François Bodart"
+  "D. Allard": "Dominique Allard"
+  "A. Galloy": "André Galloy"
+  "M. Prevot": "Maxime Prévot"
+articles:
+  2015-04-rech2: ["François Bodart", "Laurent Philippe"]
+  2016-04-expos3: ["Cécile Crefcoeur"]
+  2017-04-expos5: ["Denis Mathen"]

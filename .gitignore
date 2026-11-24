@@ -2,3 +2,7 @@ public/
 resources/
 .hugo_build.lock
 .idea/
+tools/migration/cache/
+tools/migration/.venv/
+__pycache__/
+*.log
